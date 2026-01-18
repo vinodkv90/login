@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --color: #4e4e4e;
+  --primary: #008d47;
+  --primary-hover: #018040;
+  --secondary: #e75d00;
+  --secondary-hover: #d65600;
+  --border: #e4e4e4;
+  --shade: #f1f1f1;
+  --footer: #ededed;
+  --success: #24a32e;
+  --danger: #ff1818;
+  --todo-gutter-x: 1.5rem;
+  --todo-gutter-y: 1.5rem;
+  --overlay: #00000070;
+  --radius: #{size(3)};
+  --radius-md: #{size(6)};
+  --radius-lg: #{size(9)};
+  --backdrop: #ffffff10;
+  --successDrop: #0a701380;
+  --errorDrop: #ff181880;
+  --placeholder: #9c9c9c;
+  --info: #00b7ff;
+  --montserrat: "Montserrat", sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --color: #8a8a8a;
+    --primary: #018040;
+    --primary-hover: #008d47;
+    --secondary: #d65600;
+    --secondary-hover: #e75d00;
+    --border: #4e4e4e;
+    --shade: #252525;
+    --footer: #242424;
+    --success: #00ca11;
+    --danger: #ff1818;
+    --overlay: #ffffff50;
+    --backdrop: #00000010;
+    --successDrop: #10861a80;
+    --errorDrop: #ff181880;
+    --placeholder: #4d4d4d;
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-color: var(--color);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-secondary: var(--secondary);
+  --color-secondary-hover: var(--secondary-hover);
+  --color-border: var(--border);
+  --color-shade: var(--shade);
+  --color-footer: var(--footer);
+  --color-success: var(--success);
+  --color-danger: var(--danger);
+  --color-overlay: var(--overlay);
+  --color-backdrop: var(--backdrop);
+  --color-successDrop: var(--successDrop);
+  --color-errorDrop: var(--errorDrop);
+  --color-placeholder: var(--placeholder);
+  --color-info: var(--info);
+  
+  /* fonts */
+  --font-bimbo: var(--font-bimbo);
+  --font-lexend: var(--font-lexend);
+  --font-montserrat: var(--montserrat);
+  --font-dela-gothic: var(--font-dela-gothic-one);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-size: 13px;
+  font-family: var(--font-montserrat);
+}
+
+@layer components {
+  .section {
+    @apply py-25;
+    & + .section {
+      @apply bg-background;
+    }
+    & ~ .section {
+      @apply pt-0;
+    }
+  }
+  .btn-primary {
+    @apply bg-primary text-background border border-primary hover:bg-primary-hover hover:border-primary-hover;
+  }
+  .btn-secondary {
+    @apply bg-secondary text-foreground border border-secondary hover:bg-secondary-hover hover:border-secondary-hover;
+  }
+  .btn-blank {
+    @apply bg-background text-foreground border border-border hover:bg-shade hover:border-primary;
+  }
+  .btn-sm {
+    @apply h-8 px-2;
+  }
+  .btn-md {
+    @apply h-10 px-4;
+  }
+  .btn-lg {
+    @apply h-12 px-6;
+  }
+}
+
+.toast-title {
+  @apply !font-montserrat font-bold;
+}
+.toast-icon {
+  @apply translate-y-[1px];
+}
