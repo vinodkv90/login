@@ -13,7 +13,7 @@ const LoginScreen = () => {
   return (
     <div className="w-full max-w-md p-8 space-y-3 rounded-xl bg-white">
         <h1 className="text-2xl font-bold text-center">Login</h1>
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form className='space-y-3' onSubmit={handleSubmit(onSubmit)}>
           <Input label="Email" type="email" {...register("email")} labelClass={`text-xs !font-semibold`} />
           <Input label="Password" type="password" {...register("password")} labelClass={`text-xs !font-semibold`} />
           <Button type="submit" className="w-full mt-7">Login</Button>

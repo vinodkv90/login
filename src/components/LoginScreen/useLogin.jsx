@@ -20,7 +20,7 @@ export const useLogin = (setAuth) => {
             console.log(response)
             if (response.status === 200) {
                 setAuth(true);
-                navigate('/dashboard/home', { replace: true })
+                navigate('/', { replace: true })
             }
         }).catch((error) => {
             console.log(error)

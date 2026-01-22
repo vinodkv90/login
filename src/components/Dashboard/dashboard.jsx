@@ -1,8 +1,11 @@
-import { Outlet } from 'react-router'
+import { useContext } from 'react'
+import { Navigate, Outlet } from 'react-router'
+import { AuthContext } from '../GlobalProvider/globalProvider'
 
 const Dashboard = () => {
+  const { auth } = useContext(AuthContext)
   return (
-    <Outlet />
+    auth ? <Navigate to="/" replace /> : <Outlet />
   )
 }
 

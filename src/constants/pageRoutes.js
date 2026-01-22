@@ -1,6 +1,5 @@
 export const PAGE_ROUTES = {
-    login: "/",
+    login: "/login",
     register: "/register",
-    dashboard: "/dashboard",
-    home: "home",
+    dashboard: "/",
 }

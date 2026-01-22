@@ -1,8 +1,8 @@
-import React from 'react'
+import Logout from '../../components/Logout'
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <div><Logout /></div>
   )
 }
 
